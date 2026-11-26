@@ -1,7 +1,6 @@
 node_modules/
 dist/
 *.vsix
-test/out/
 tools/render/node_modules/
 tools/render/out/
 tools/render/harness.bundle.js

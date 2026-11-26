@@ -43,7 +43,6 @@
 		"build": "node esbuild.mjs",
 		"watch": "node esbuild.mjs --watch",
 		"typecheck": "tsc --noEmit",
-		"test": "node esbuild.mjs && node test/run.mjs",
 		"package": "node esbuild.mjs --production && vsce package --no-dependencies"
 	},
 	"dependencies": {

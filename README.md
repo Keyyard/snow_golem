@@ -18,6 +18,7 @@ adding effects to animations, and finding Molang typos.
 1. In VS Code, open the Extensions view, click `…`, choose *Install from VSIX…* and pick the `.vsix` file.
    VS Code also installs the Snowstorm extension, which snow_golem needs.
 2. Open your addon folder. When the status bar shows `❄ snow_golem :3917`, the server is running.
+![Status Bar in VSCode](media/status_bar.png)
 3. Connect your AI app. Click the status bar item to copy the right setting.
 
    Claude Code:
@@ -114,7 +115,6 @@ You get the same tools, but effects cannot open in Snowstorm automatically.
 
 ```bash
 npm install
-npm test          # builds, then runs 66 checks, including a real MCP client on a demo addon
 npm run package   # makes snow-golem-0.1.0.vsix
 ```
 

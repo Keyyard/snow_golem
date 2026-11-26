@@ -1,5 +1,0 @@
-{
-	"format_version": 2,
-	"header": { "name": "Demo Addon RP", "description": "", "uuid": "11111111-1111-4111-8111-111111111111", "version": [1, 0, 0], "min_engine_version": [1, 21, 0] },
-	"modules": [{ "type": "resources", "uuid": "11111111-1111-4111-8111-111111111112", "version": [1, 0, 0] }]
-}

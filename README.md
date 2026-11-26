@@ -1,24 +1,30 @@
 # snow_golem
 
-> AI particle VFX for Minecraft Bedrock. Previews in Snowstorm.
+> Minecraft particle mcp for vscode.
 
-snow_golem is a VS Code extension. It lets an AI assistant like Claude make particle effects inside your
-resource pack. The AI can build effects with several layers, check them for mistakes, estimate how heavy
-they are, and connect them to your entities and animations. You watch each result in
-[Snowstorm](https://github.com/JannisX11/snowstorm), right next to your code.
+snow_golem is a VS Code extension that lets an AI assistant like Claude make particle effects inside your resource pack so thry can build effects with several layers, check for mistakes, estimate how heavy they are, and connect them to your entities and animations.
 
-If your team has no VFX artist, you can ask for "a cyan hit spark for the boss slam" and get a finished
-effect. If you already make VFX, you can hand off the repetitive work: color variants, timing changes,
-adding effects to animations, and finding Molang typos.
+Best with [Snowstorm](https://github.com/JannisX11/snowstorm) to preview your particles right next to your code.
+
+If your team has no VFX artist, you can ask for "a cyan hit spark for the boss slam" and get a finished effect.
+If you already make VFX, you can hand off the repetitive work: color variants, timing changes, adding effects to animations, and finding Molang typos.
+
+I created this because my studio Keyyard Project could not find and afford a VFX Artist at the moment.
 
 ![The six built-in presets, rendered with Wintersky](media/presets.png)
 
 ## Install
 
-1. In VS Code, open the Extensions view, click `…`, choose *Install from VSIX…* and pick the `.vsix` file.
-   VS Code also installs the Snowstorm extension, which snow_golem needs.
+1. Install **snow_golem** from the
+   [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=keyyard.snow-golem),
+   or search for `snow_golem` in the Extensions view. You can also run this in Quick Open (`Ctrl+P`):
+   ```
+   ext install keyyard.snow-golem
+   ```
+   VS Code also installs the Snowstorm extension, which snow_golem uses for previews.
 2. Open your addon folder. When the status bar shows `❄ snow_golem :3917`, the server is running.
-![Status Bar in VSCode](media/status_bar.png)
+
+   ![Status Bar in VSCode](media/status_bar.png)
 3. Connect your AI app. Click the status bar item to copy the right setting.
 
    Claude Code:

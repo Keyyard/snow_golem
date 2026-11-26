@@ -1,10 +1,10 @@
 {
 	"name": "snow-golem",
 	"displayName": "snow_golem",
-	"description": "AI particle VFX for Minecraft Bedrock addons. Previews in Snowstorm.",
-	"version": "0.1.0",
+	"description": "Minecraft particle mcp for vscode.",
+	"version": "0.1.1",
 	"publisher": "keyyard",
-	"author": { "name": "Keyyard Hieu", "email": "contact@keyyard.xyz", "url": "https://keyyard.xyz" },
+	"author": { "name": "Keyyard", "email": "contact@keyyard.xyz", "url": "https://keyyard.xyz" },
 	"license": "MIT",
 	"icon": "media/icon.png",
 	"repository": { "type": "git", "url": "https://github.com/keyyard/snow_golem" },
@@ -14,7 +14,6 @@
 	"main": "./dist/extension.js",
 	"bin": { "snow_golem": "./dist/cli.js" },
 	"activationEvents": ["onStartupFinished"],
-	"extensionDependencies": ["JannisX11.snowstorm"],
 	"contributes": {
 		"commands": [
 			{ "command": "snowGolem.menu", "title": "snow_golem: Menu" },
@@ -43,7 +42,9 @@
 		"build": "node esbuild.mjs",
 		"watch": "node esbuild.mjs --watch",
 		"typecheck": "tsc --noEmit",
-		"package": "node esbuild.mjs --production && vsce package --no-dependencies"
+		"vscode:prepublish": "node esbuild.mjs --production",
+		"package": "vsce package --no-dependencies",
+		"package:openvsx": "node tools/package-openvsx.mjs"
 	},
 	"dependencies": {
 		"@modelcontextprotocol/sdk": "^1.32.2",

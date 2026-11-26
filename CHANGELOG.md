@@ -12,3 +12,7 @@
   `.snow_golem/backups/`. Saving stops if a file changed on disk or has unsaved edits, and snow_golem never
   writes outside the project folder.
 - Command-line mode without VS Code: `node dist/cli.js --root <addon>`, over stdio or HTTP.
+
+## 0.1.1 
+
+- DOCS update

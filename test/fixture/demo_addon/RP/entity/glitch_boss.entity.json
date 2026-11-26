@@ -1,0 +1,17 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "demo:glitch_boss",
+			// hand-written comment that must survive edits
+			"materials": { "default": "entity_alphatest" },
+			"textures": { "default": "textures/entity/glitch_boss" },
+			"geometry": { "default": "geometry.glitch_boss" },
+			"animations": {
+				"slam": "animation.glitch_boss.slam",
+				"idle": "animation.glitch_boss.idle"
+			},
+			"render_controllers": ["controller.render.default"]
+		}
+	}
+}

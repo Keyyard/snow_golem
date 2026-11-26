@@ -1,0 +1,63 @@
+{
+	"name": "snow-golem",
+	"displayName": "snow_golem",
+	"description": "AI particle VFX for Minecraft Bedrock addons. Previews in Snowstorm.",
+	"version": "0.1.0",
+	"publisher": "keyyard",
+	"author": { "name": "Keyyard Hieu", "email": "contact@keyyard.xyz", "url": "https://keyyard.xyz" },
+	"license": "MIT",
+	"icon": "media/icon.png",
+	"repository": { "type": "git", "url": "https://github.com/keyyard/snow_golem" },
+	"engines": { "vscode": "^1.101.0" },
+	"categories": ["AI", "Visualization", "Other"],
+	"keywords": ["minecraft", "bedrock", "particles", "snowstorm", "mcp", "vfx", "addon"],
+	"main": "./dist/extension.js",
+	"bin": { "snow_golem": "./dist/cli.js" },
+	"activationEvents": ["onStartupFinished"],
+	"extensionDependencies": ["JannisX11.snowstorm"],
+	"contributes": {
+		"commands": [
+			{ "command": "snowGolem.menu", "title": "snow_golem: Menu" },
+			{ "command": "snowGolem.start", "title": "snow_golem: Start MCP Server" },
+			{ "command": "snowGolem.stop", "title": "snow_golem: Stop MCP Server" },
+			{ "command": "snowGolem.restart", "title": "snow_golem: Restart MCP Server" },
+			{ "command": "snowGolem.copyClaudeCodeCommand", "title": "snow_golem: Copy Claude Code Command" },
+			{ "command": "snowGolem.copyMcpConfig", "title": "snow_golem: Copy MCP Config JSON" }
+		],
+		"mcpServerDefinitionProviders": [
+			{ "id": "snowGolem.mcp", "label": "snow_golem" }
+		],
+		"configuration": {
+			"title": "snow_golem",
+			"properties": {
+				"snowGolem.port": { "type": "number", "default": 3917, "description": "Local port for the MCP server (http://127.0.0.1:<port>/mcp)." },
+				"snowGolem.autoStart": { "type": "boolean", "default": true, "description": "Start the MCP server when VS Code opens a folder." },
+				"snowGolem.autoApply": { "type": "boolean", "default": false, "description": "Write changes immediately instead of proposing a diff first. Backups are still made." },
+				"snowGolem.performanceBudget": { "type": "string", "enum": ["mobile", "desktop"], "default": "mobile", "description": "Budget used when rating effect cost." },
+				"snowGolem.resourcePack": { "type": "string", "default": "", "description": "Resource pack name or folder, when the workspace has several." },
+				"snowGolem.projectRoot": { "type": "string", "default": "", "description": "Override the project folder (defaults to the first workspace folder)." }
+			}
+		}
+	},
+	"scripts": {
+		"build": "node esbuild.mjs",
+		"watch": "node esbuild.mjs --watch",
+		"typecheck": "tsc --noEmit",
+		"test": "node esbuild.mjs && node test/run.mjs",
+		"package": "node esbuild.mjs --production && vsce package --no-dependencies"
+	},
+	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.32.2",
+		"diff": "^9.0.0",
+		"jsonc-parser": "^3.3.1",
+		"molangjs": "^1.7.1",
+		"zod": "^4.6.7"
+	},
+	"devDependencies": {
+		"@types/node": "^22.0.0",
+		"@types/vscode": "1.101.0",
+		"@vscode/vsce": "^4.1.1",
+		"esbuild": "^0.28.2",
+		"typescript": "^7.0.2"
+	}
+}
